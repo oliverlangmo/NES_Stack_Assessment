@@ -1,0 +1,9 @@
+createdb zookeeper
+database name = zookeeper
+table name = animals_in_zoo
+CREATE TABLE animals_in_zoo (
+     id SERIAL PRIMARY KEY,
+     animal_type VARCHAR(32) unique,
+     animal_quantity INT,
+);
+column names= |id|animal_type|animal_quantity|
