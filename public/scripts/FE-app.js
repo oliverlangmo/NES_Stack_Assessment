@@ -23,6 +23,7 @@ var getAnimals = function(){
     });
   };
 function showAnimals (animals){
+  $('#displayDiv').empty();
   console.log(animals);
   for (var i = 0; i < animals.length; i++) {
     var animalReturn = "<p>" + animals[i].animal_type + ", quantity: " + animals[i].animal_quantity + "</p>";

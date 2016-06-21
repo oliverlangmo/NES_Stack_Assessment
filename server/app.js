@@ -24,7 +24,9 @@ app.post('/addAnimal', urlencodedParser, function(req, res){
       pg.connect( connectionString, function( err, client, done ){
         if( err ) console.log( err );
         else client.query( 'INSERT INTO animals_in_zoo ( animal_type, animal_quantity ) VALUES ($1, $2)', [ req.body.newAnimal, quantity] );
+        done();
       });
+      
 });
 app.get('/getAnimals', function(req, res){
 console.log('/get animals');
@@ -35,6 +37,7 @@ pg.connect( connectionString, function(err, client, done){
     results.push(row);
   });
   query.on('end', function() {
+    done();
   return res.json(results);
         }); // end onEnd
 });
