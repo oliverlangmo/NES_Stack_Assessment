@@ -11,6 +11,7 @@ $(document).ready(function(){
     url: '/addAnimal',
     data: newZooAnimal
 });
+getAnimals();
 });
 var getAnimals = function(){
   $.ajax({
